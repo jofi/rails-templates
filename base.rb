@@ -28,4 +28,5 @@ if yes?("Do you want to freeze gems?")
   rake "rails:freeze:gems"
 end
 
-git :add => ".", :commit => "-m 'initial commit'"
+git :add => "."
+git :commit => "-m 'initial commit'"
