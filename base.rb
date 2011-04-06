@@ -4,7 +4,12 @@ if yes?("Do you want to use RSpec for testing?")
   generate :rspec
 end
 
-generate :nifty_layout
+gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com'
+plugin 'rails-widgets', :git => 'git://github.com/paolodona/rails-widgets.git'
+
+rake "gems:install"
+
+generate :jofi_layout
 
 git :init
 
@@ -18,5 +23,13 @@ tmp/**/*
 config/database.yml
 db/*.sqlite3
 END
+
+if yes?("Do you want to freeze rails?")
+  rake "rails:freeze:edge"
+end
+
+if yes?("Do you want to freeze gems?")
+  rake "rails:freeze:gems"
+end
 
 git :add => ".", :commit => "-m 'initial commit'"
