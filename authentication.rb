@@ -3,9 +3,9 @@ gem 'devise'
 gem 'cancan'
 
 rake "gems:install"
-rake "devise:setup"
 
 generate :devise_install
+generate :devise_views
 generate :devise, "User"
 rake "db:migrate"
 rake "routes"
