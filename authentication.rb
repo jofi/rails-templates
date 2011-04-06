@@ -1,4 +1,4 @@
-load_template "http://github.com/jofi/rails-templates/raw/master/base.rb"
+load_template "https://github.com/jofi/rails-templates/raw/master/base.rb"
 gem 'devise'
 gem 'cancan'
 

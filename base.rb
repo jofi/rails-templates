@@ -24,10 +24,6 @@ config/database.yml
 db/*.sqlite3
 END
 
-if yes?("Do you want to freeze rails?")
-  rake "rails:freeze:edge"
-end
-
 if yes?("Do you want to freeze gems?")
   rake "rails:freeze:gems"
 end
